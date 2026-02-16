@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	      <!-- Publication -->
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <SelfContained>true</SelfContained>
+	  <PublishSingleFile>true</PublishSingleFile>
+	  <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+	  <PublishTrimmed>true</PublishTrimmed>
+
+	  <!-- Qualité Release -->
+	  <Configuration>Release</Configuration>
+	  <Optimize>true</Optimize>
+	  <DebugType>none</DebugType>
+	  <DebugSymbols>false</DebugSymbols>
+
+	<AssemblyName>WebClientRelayUp</AssemblyName>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>

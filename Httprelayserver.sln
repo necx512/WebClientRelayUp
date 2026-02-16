@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Httprelayserver", "Httprelayserver\Httprelayserver.csproj", "{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Debug|x64.ActiveCfg = Debug|x64
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Debug|x64.Build.0 = Debug|x64
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Release|x64.ActiveCfg = Release|x64
+		{336F5CB4-5D1A-40BD-B7C3-33235FAD8C7E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45E366A3-0933-4070-BEBC-C5F00B91E061}
+	EndGlobalSection
+EndGlobal
