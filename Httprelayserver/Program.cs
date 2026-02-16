@@ -249,6 +249,7 @@ namespace HttpLdapRelay
             Console.WriteLine("Optional Arguments:");
             Console.WriteLine("  -p, --port <port>                  HTTP port to listen on (default: 8080)");
             Console.WriteLine("  -u, --user-to-impersonate <user>   The username you want to impersonate (default: Administrator)");
+            Console.WriteLine("  --force                            /!\\ Warning /!\\ Force the change of ms-DSKeyCredentialLink attribute ");
             Console.WriteLine("  -lp, --ldap-port <port>            LDAP port (default: 389, or 636 for LDAPS)");
             Console.WriteLine("  -s, --ldaps                        Use LDAPS instead of LDAP (default: false)");
             Console.WriteLine("  -a, --auto                         If used, disable auto-trigger EFS coercion. Enabled by default.");

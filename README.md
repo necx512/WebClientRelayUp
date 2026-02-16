@@ -41,6 +41,7 @@ Required Arguments:
 Optional Arguments:
   -p, --port <port>                  HTTP port to listen on (default: 8080)
   -u, --user-to-impersonate <user>   The username you want to impersonate (default: Administrator)
+  --force                            /!\\ Warning /!\\ Force the change of ms-DSKeyCredentialLink attribute
   -lp, --ldap-port <port>            LDAP port (default: 389, or 636 for LDAPS)
   -s, --ldaps                        Use LDAPS instead of LDAP (default: false)
   -a, --auto                         If used, disable auto-trigger EFS coercion. Enabled by default.
@@ -92,7 +93,7 @@ An SACL has to be configured to get the correct event ID on GUID `5b47d60f-6090-
 * [Cube0x0](https://twitter.com/cube0x0) for his [SharpSystemTriggers](https://github.com/cube0x0/SharpSystemTriggers/tree/main/SharpEfsTrigger) functionality (specifically SharpEfsTrigger) which was used in this project.
 * [Will Schroeder](https://twitter.com/harmj0y) and everyone who contributed to [Rubeus](https://github.com/GhostPack/Rubeus/). Helped me a lot to implemented PKINIT.
 * [Dec0ne](https://github.com/Dec0ne) for his work on [DavRelayUp](https://github.com/Dec0ne/DavRelayUp), which was a huge inspiration to create this project. 
-* [Shutdown](https://github.com/ShutdownRepo) for his work on [pyWhisker](https://github.com/ShutdownRepo/pywhisker), which helped me a lot to implementate ShadowCredentials attack.
+* [Shutdown](https://github.com/ShutdownRepo) for his work on [pyWhisker](https://github.com/ShutdownRepo/pywhisker), which helped me a lot to implemente ShadowCredentials attack.
 
 
 Created by Hack0ura (Purple Teamer at Advens)
