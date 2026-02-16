@@ -9,7 +9,7 @@ This project is based on [DavRelayUp](https://github.com/Dec0ne/DavRelayUp). The
 
 How does it work ?
 
-1. Force-start the WebClient service (if not already running)
+1. Force-start the WebClient service (if not already running) (No admin account needed! :))
 2. Start a HTTP relay server (by default on port 8080)
 3. Force SYSTEM to connect to our relay server using MS-EFSR functions ([SharpEfsTrigger](https://github.com/cube0x0/SharpSystemTriggers/tree/main/SharpEfsTrigger)) 
 4. Relay the connection to the LDAP service of a domain controller (relaying a machine account)
@@ -97,3 +97,13 @@ An SACL has to be configured to get the correct event ID on GUID `5b47d60f-6090-
 
 
 Created by Hack0ura (Purple Teamer at Advens)
+
+## Disclaimer
+
+This privilege escalation tool is released for **educational and research purposes only**, and to help defenders understand Windows domain-joined attack surfaces.
+ 
+**Do NOT use this tool on any system or network without explicit written permission from the owner.**
+ 
+The author(s) bear **no responsibility** for any misuse, damage, or legal consequences resulting from the use of this code.
+ 
+Use at your own risk — and only in authorized environments.
