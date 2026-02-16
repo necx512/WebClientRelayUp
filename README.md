@@ -96,7 +96,9 @@ An SACL has to be configured to get the correct event ID on GUID `5b47d60f-6090-
 * [Shutdown](https://github.com/ShutdownRepo) for his work on [pyWhisker](https://github.com/ShutdownRepo/pywhisker), which helped me a lot to implemente ShadowCredentials attack.
 
 
-Created by Hack0ura (Purple Teamer at Advens)
+Created by Hack0ura (Purple Teamer at [Advens](https://www.linkedin.com/company/advens/))
+
+> https://www.advens.com/
 
 ## Disclaimer
 
