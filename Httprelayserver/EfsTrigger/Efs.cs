@@ -28,12 +28,22 @@ namespace Httprelayserver.EfsTrigger
         [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         public Efs(bool useEfsrpcPipe)
         {
+                    public Efs(bool useEfsrpcPipe)
+        {
             if (useEfsrpcPipe)
             {
                 // Windows 11 22H2+ : use \pipe\efsrpc with different UUID
                 interfaceId = new Guid("df1941c5-fe89-4e79-bf10-463657acf44d");
                 _pipeName = "\\pipe\\efsrpc";
                 Console.WriteLine("[*] Using \\pipe\\efsrpc (Windows 11 22H2+ mode)");
+                if (nint.Size == 8)
+                {
+                    InitializeStub(interfaceId, MIDL_ProcFormatStringx64, MIDL_TypeFormatStringx64, null, 1, 0);
+                }
+                else
+                {
+                    InitializeStub(interfaceId, MIDL_ProcFormatStringx86, MIDL_TypeFormatStringx86, null, 1, 0);
+                }
             }
             else
             {
@@ -41,16 +51,17 @@ namespace Httprelayserver.EfsTrigger
                 interfaceId = new Guid("c681d488-d850-11d0-8c52-00c04fd90f7e");
                 _pipeName = "\\pipe\\lsarpc";
                 Console.WriteLine("[*] Using \\pipe\\lsarpc (legacy mode)");
+                if (nint.Size == 8)
+                {
+                    InitializeStub(interfaceId, MIDL_ProcFormatStringx64, MIDL_TypeFormatStringx64, _pipeName, 1, 0);
+                }
+                else
+                {
+                    InitializeStub(interfaceId, MIDL_ProcFormatStringx86, MIDL_TypeFormatStringx86, _pipeName, 1, 0);
+                }
             }
-
-            if (nint.Size == 8)
-            {
-                InitializeStub(interfaceId, MIDL_ProcFormatStringx64, MIDL_TypeFormatStringx64, _pipeName, 1, 0);
-            }
-            else
-            {
-                InitializeStub(interfaceId, MIDL_ProcFormatStringx86, MIDL_TypeFormatStringx86, _pipeName, 1, 0);
-            }
+            
+        }
         }
 
         /// <summary>
