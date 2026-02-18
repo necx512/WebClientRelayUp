@@ -28,8 +28,6 @@ namespace Httprelayserver.EfsTrigger
         [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         public Efs(bool useEfsrpcPipe)
         {
-                    public Efs(bool useEfsrpcPipe)
-        {
             if (useEfsrpcPipe)
             {
                 // Windows 11 22H2+ : use \pipe\efsrpc with different UUID
@@ -60,9 +58,8 @@ namespace Httprelayserver.EfsTrigger
                     InitializeStub(interfaceId, MIDL_ProcFormatStringx86, MIDL_TypeFormatStringx86, _pipeName, 1, 0);
                 }
             }
-            
         }
-        }
+        
 
         /// <summary>
         /// Detect Windows 11 22H2 or later (build 20000+)
