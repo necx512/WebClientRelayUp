@@ -130,7 +130,12 @@ namespace HttpLdapRelay
                 domain.Split('.', StringSplitOptions.RemoveEmptyEntries)
                       .Select(part => $"DC={part}")
             );
-            var searchRequest = BuildSearchRequest(searchBase, samAccountName);
+
+            string cnClient = samAccountName.Substring(0, samAccountName.Length - 1);
+
+            Console.WriteLine($"[*] Building ldap search request for {cnClient}...\n");
+
+            var searchRequest = BuildSearchRequest(searchBase, cnClient);
 
             SendMessage(searchRequest);
             byte[] response = ReceiveMessage();
@@ -145,17 +150,13 @@ namespace HttpLdapRelay
             return dn;
         }
 
-        private byte[] BuildSearchRequest(string baseDn, string samAccountName)
+        private byte[] BuildSearchRequest(string baseDn, string cnClient)
         {
             _messageId++;
 
-            // Build attribute list - just need distinguishedName
-            byte[] attrBytes = EncodeOctetString(Encoding.UTF8.GetBytes("distinguishedName"));
-            byte[] attributesSeq = Wrap(0x30, attrBytes);
-
-            // Build equality filter: (sAMAccountName=value)
-            byte[] attrDesc = EncodeOctetString(Encoding.UTF8.GetBytes("sAMAccountName"));
-            byte[] attrValue = EncodeOctetString(Encoding.UTF8.GetBytes(samAccountName));
+            // Build equality filter: (CN=cnClient)
+            byte[] attrDesc = EncodeOctetString(Encoding.UTF8.GetBytes("CN"));
+            byte[] attrValue = EncodeOctetString(Encoding.UTF8.GetBytes(cnClient));
             byte[] filterBytes = Wrap(0xA3, Combine(attrDesc, attrValue)); // 0xA3 = equalityMatch
 
             // SearchRequest ::= [APPLICATION 3] SEQUENCE
@@ -167,7 +168,7 @@ namespace HttpLdapRelay
                 EncodeInteger(0),                                    // timeLimit
                 new byte[] { 0x01, 0x01, 0x00 },                     // typesOnly = FALSE
                 filterBytes,                                         // filter
-                attributesSeq                                        // attributes
+                new byte[] { 0x30, 0x00 }                            // attributes (which is emtpy)
             ));
 
             return Wrap(0x30, Combine(
